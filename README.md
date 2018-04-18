@@ -13,3 +13,5 @@ git config --global user.email "example@qq.com"
 之后需要创建一个git版本库。
 
 此时有两种情况。
+
+第一种情况
