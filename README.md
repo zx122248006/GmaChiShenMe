@@ -19,3 +19,5 @@ git config --global user.email "example@qq.com"
 git checkout 
 
 git branch 
+
+git remote
