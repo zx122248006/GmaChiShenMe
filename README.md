@@ -15,3 +15,7 @@ git config --global user.email "example@qq.com"
 此时有两种情况。
 
 有版本控制库和没有版本控制库。
+
+git checkout 
+
+git branch 
