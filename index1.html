@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+	<title>吃什么</title>
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+</head>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	overflow: hidden;
+}
+
+.back{
+	display: none;
+}
+
+.abc{
+	position: absolute;
+}
+
+.info{
+/*	width: 90%;
+	margin: 0 auto;
+	margin-top: 15%;
+	box-sizing: border-box;
+	border:1px solid #fff;*/
+
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    top: 20%;
+    z-index: 999;
+}
+
+.stop{
+	display: none;
+}
+
+.start{
+	width: 100px;
+	height: 50px;
+	background :#ccc;
+	margin:0 auto;
+	text-align: center;
+	line-height: 50px;
+	border-radius: 15px;
+
+}
+
+.text{
+	font-size: 26px;
+	text-align: center;
+	padding-bottom: 20px;	
+}
+
+.eat{
+    width: 200px;
+    font-size: 26px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+</style>
+<body>
+	<div class="back">
+		<div class="abc">asd</div>
+		<div class="abc">asd</div>
+		<div class="abc">asd</div>
+		<div class="abc">asd</div>
+		<div class="abc">asd</div>
+	</div>
+
+	<div class="info">
+		<p class="eat"></p>
+		<p class="text"></p>
+		<div class="start">点击</div>
+	</div>
+	
+</body>
+
+<script>
+var $date = new Date()
+var $Hours =$date.getHours()
+
+if($Hours >= 7){
+	$('.eat').text('早上吃什么？')
+}
+
+if($Hours >= 12){
+	$('.eat').text('中午吃什么？')
+}
+
+if($Hours >= 17){
+	$('.eat').text('晚上吃什么？')
+}
+
+if($Hours >= 22){
+	$('.eat').text('宵夜吃什么？')
+}
+
+
+// 菜单的数组
+var $arry = new Array();
+$arry = ['肯德基','必胜客','麦当劳','麻辣火锅','韩国料理','日本寿司','烤肉','素粉','牛肉粉','肥肠粉','肠旺面','丝娃娃','冒菜','食堂','麻辣香锅','爱吃啥吃啥','饺子','包子'];
+
+// 获取数组的长度用于输出菜单
+var $ar = $arry.length;
+
+// 颜色的数组
+var $color = new Array();
+$color = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+
+
+// 菜单快速变换
+var int = null;
+var timer = 50;
+function Start(){
+	int = setInterval('move()',timer)
+}
+
+function Stop(){
+	clearInterval(int);
+}
+
+function move(){
+	// 菜单变换
+	$('.text').text($arry[parseInt(Math.random()*$ar)])
+
+	// 颜色变换
+	$('.text').css('color','#'
+		+$color[parseInt(Math.random()*16)]
+		+$color[parseInt(Math.random()*16)]
+		+$color[parseInt(Math.random()*16)]
+		+$color[parseInt(Math.random()*16)]
+		+$color[parseInt(Math.random()*16)]
+		+$color[parseInt(Math.random()*16)]
+	)
+}
+
+
+var i =0;
+var j =0;
+
+$('.start').click(function(){
+	i++;
+	j++;
+	var $a = $('.eat').html();
+	if (i==1) {
+		$(".start").text('停止');
+		Start();
+		if($a == '早上吃什么？'){
+			$('.eat').text('早上吃这个。');
+		}
+		if($a == '中午吃什么？'){
+			$('.eat').text('中午吃这个。');
+		}
+		if($a == '晚上吃什么？'){
+			$('.eat').text('晚上吃这个。');
+		}
+		if($a == '宵夜吃什么？'){
+			$('.eat').text('宵夜吃这个。');
+		}
+	}else{
+		$(".start").text('点击');
+		i=0;
+		// $('.text').css('color','#333')
+		Stop();
+
+		// 设定.eat的内容
+		if($Hours >= 7){
+			$('.eat').text('早上吃什么？')
+		}
+
+		if($Hours >= 12){
+			$('.eat').text('中午吃什么？')
+		}
+
+		if($Hours >= 17){
+			$('.eat').text('晚上吃什么？')
+		}
+
+		if($Hours >= 22){
+			$('.eat').text('宵夜吃什么？')
+		}	
+			
+	}
+	// 当点击次数超过7次，弹出提示，按键消失
+	if( j>= 7 ){
+		Stop();
+		$('.start').hide();
+		alert('这么难将就，还吃什么吃，别吃了。')
+		
+	}
+	
+	console.log('菜名'+ parseInt(Math.random()*$ar));
+
+})
+
+	
+// setInterval(function(){
+// 	$('.back').append("<div class='abc'>"+$arry[parseInt(Math.random()*$ar)]+"</div>")
+	
+// },500)
+
+
+
+
+
+
+
+
+
+</script>
+<script>
+
+
+</script>
+</html>
