@@ -4,4 +4,4 @@
 
 ## 预览地址
 
-[Demo](http://zx122248006.github.io/GmaChiShenMe/)
+<a href="http://zx122248006.github.io/GmaChiShenMe" target="_blank">Demo</a>
