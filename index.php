@@ -22,8 +22,8 @@
 			};
 		 ?>
 	</title>
-	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-
+	<!-- <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script> -->
+  <script src="./jquery.js"></script>
 	<link rel="stylesheet" href="./index.css">
 </head>
 <body>
